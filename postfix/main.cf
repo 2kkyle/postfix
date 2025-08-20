@@ -13,5 +13,5 @@ inet_protocols = ipv4
 maillog_file = /dev/stdout
 
 # TLS for outbound SMTP
-smtp_tls_security_level = may
+smtp_tls_security_level = encrypt
 smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
