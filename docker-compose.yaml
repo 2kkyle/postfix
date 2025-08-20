@@ -9,5 +9,6 @@ services:
       - MYHOSTNAME=smtp.example.com
       - RELAYHOST=smtp.example.com:587
       - MYNETWORKS=127.0.0.0/8 172.16.0.0/12
+    volumes:
+      - ./spool:/var/spool/postfix
     restart: unless-stopped
-
