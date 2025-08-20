@@ -1,0 +1,16 @@
+# Required settings
+myhostname = ${MYHOSTNAME}
+myorigin = /etc/mailname
+mydestination =
+relayhost = ${RELAYHOST}
+mynetworks = ${MYNETWORKS}
+inet_interfaces = all
+inet_protocols = ipv4
+
+# Logging
+maillog_file = /dev/stdout
+
+# TLS for outbound SMTP
+smtp_use_tls = yes
+smtp_tls_security_level = encrypt
+smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
