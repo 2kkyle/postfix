@@ -112,8 +112,8 @@ certs/postfix.crt
 
 Use OpenSSL to make them:
 ```
-openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 3650 -nodes -subj "/C=<YOUR COUNTRY>/ST=<YOUR STATE>/L=<YOUR TOWN>/O=<YOUR ORG>/OU=<YOUR OU>/CN=<YOUR NAME>"
-
+openssl req -x509 -newkey rsa:4096 -keyout certs/postfix.key -out certs/postfix.crt -sha256 -days 3650 -nodes -subj "/C=<YOUR COUNTRY>/ST=<YOUR STATE>/L=<YOUR TOWN>/O=<YOUR ORG>/OU=<YOUR OU>/CN=<YOUR NAME>"
+```
 ---
 
 ## Project Structure
