@@ -104,6 +104,16 @@ smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
 
 No additional setup is needed for standard public SMTP servers with valid certs.
 
+For SMTPD TLS Suppport create files:
+```
+certs/postfix.key
+certs/postfix.crt
+```
+
+Use OpenSSL to make them:
+```
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 3650 -nodes -subj "/C=<YOUR COUNTRY>/ST=<YOUR STATE>/L=<YOUR TOWN>/O=<YOUR ORG>/OU=<YOUR OU>/CN=<YOUR NAME>"
+
 ---
 
 ## Project Structure
