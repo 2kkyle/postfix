@@ -1,8 +1,10 @@
 # Required settings
+compatibility_level=3.6
 myhostname = ${MYHOSTNAME}
 #myorigin = /etc/mailname
 #mydestination =
 relayhost = ${RELAYHOST}
+smtpd_relay_restrictions = permit_mynetworks defer_unauth_destination
 mynetworks = ${MYNETWORKS}
 inet_interfaces = all
 inet_protocols = ipv4
@@ -11,5 +13,5 @@ inet_protocols = ipv4
 maillog_file = /dev/stdout
 
 # TLS for outbound SMTP
-smtp_tls_security_level = encrypt
+smtp_tls_security_level = may
 smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
