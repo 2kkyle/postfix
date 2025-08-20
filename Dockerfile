@@ -2,7 +2,7 @@ FROM debian:stable-slim
 
 # Install Postfix only
 RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y postfix ca-certificates && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y postfix ca-certificates gettext && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Copy config and script
