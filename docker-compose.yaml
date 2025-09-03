@@ -1,0 +1,17 @@
+services:
+  postfix:
+    build: .
+    container_name: postfix
+#    ports:
+#     - "25:25"
+    network_mode: host
+    environment:
+      - MYHOSTNAME=smtp.example.com
+      - RELAYHOST=smtp.example.com:587
+      - MYNETWORKS=127.0.0.0/8 172.16.0.0/12
+    volumes:
+      - ./spool:/var/spool/postfix
+      - ./certs/postfix.crt:/etc/ssl/certs/postfix.crt:ro
+      - ./certs/postfix.key:/etc/ssl/private/postfix.key:ro
+
+    restart: unless-stopped
